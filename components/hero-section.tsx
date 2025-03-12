@@ -13,7 +13,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen hero-section pt-28 md:pt-32 lg:pt-6">
+    <section className="relative min-h-screen hero-section pt-48 md:pt-32 lg:pt-6">
       <div className="container h-full">
         <div className="section-with-drone">
           <motion.div 

@@ -46,16 +46,16 @@ export const DroneModel = ({ onLoad }: DroneModelProps) => {
     if (!droneObject) return;
 
     const mobileSettings = {
-      initialLeft: '-80%',
+      initialLeft: '0%',
       initialTop: '10%',
       scale: 0.2, // Reduced scale further for mobile
       positions: [
         { left: '-20%', top: '5%', scale: 0.2 },
-        { left: '15%', top: '30%', scale: 0.2 },
-        { left: '-15%', top: '8%', scale: 0.2 },
-        { left: '10%', top: '32%', scale: 0.2 },
-        { left: '-10%', top: '25%', scale: 0.2 },
-        { left: '0%', top: '-60%', scale: 0.2, opacity: 0 }
+        { left: '25%', top: '40%', scale: 0.2 },
+        { left: '-20%', top: '8%', scale: 0.2 },
+        { left: '20%', top: '32%', scale: 0.2 },
+        { left: '-20%', top: '25%', scale: 0.2 },
+        { left: '0%', top: '-50%', scale: 0.2, opacity: 0 }
       ]
     };
 
@@ -168,11 +168,11 @@ export const DroneModel = ({ onLoad }: DroneModelProps) => {
 
   return (
     <div className="spline-container fixed inset-0 pointer-events-none" ref={splineContainerRef} style={{
-      width: isMobile ? '150vw' : '100%',
+      width: isMobile ? '180vw' : '100%',
       height: isMobile ? '150vh' : '100%',
-      left: isMobile ? '-25vw' : '0',
-      top: isMobile ? '-25vh' : '0',
-      transform: isMobile ? 'scale(1.2)' : 'none'
+      left: isMobile ? '-45vw' : '0',
+      top: isMobile ? '-45vh' : '0',
+      transform: isMobile ? 'scale(0.6)' : 'none'
     }}>
       <div ref={droneRef} className="drone-animate-float" style={{
         width: '100%',

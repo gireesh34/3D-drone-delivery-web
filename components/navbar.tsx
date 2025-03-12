@@ -27,7 +27,7 @@ export function Navbar() {
 
   const delayedHide = hideTimeout(() => {
     setVisible(false);
-  }, 8000);
+  }, 10000);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,10 +58,10 @@ export function Navbar() {
   }, [lastScrollY, delayedHide]);
 
   return (
-    <nav className={`fixed top-4 left-4 right-4 z-50 mx-auto flex max-w-[1440px] items-center justify-between rounded-full border bg-white/50 px-6 py-3 backdrop-blur-sm dark:bg-card/50 transition-all duration-300 ${
+    <nav className={`fixed top-4 left-0 right-0 z-50 mx-auto flex max-w-[1440px] items-center justify-between rounded-full border bg-white/50 px-4 py-3 backdrop-blur-sm dark:bg-card/50 transition-all duration-300 ${
       visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
     }`}>
-      <div className="container mx-auto flex items-center justify-between px-4">
+      <div className="flex w-full items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Drone className="h-6 w-6 text-blue-500 lg:h-8 lg:w-8" />
           <span className="text-xl font-bold lg:text-2xl">AeroVantage</span>
@@ -97,7 +97,7 @@ export function Navbar() {
                 <Menu className={cn("h-6 w-6 transform transition-all duration-200 ease-in-out", isOpen && "rotate-90")} />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="mt-16 w-[300px] sm:w-[400px] p-6 border-none bg-white/30 backdrop-blur-sm dark:bg-slate-950/30">
+            <SheetContent side="right" className="mt-16 w-screen p-4 border-none bg-white/30 backdrop-blur-sm dark:bg-slate-950/30 sm:w-[400px] sm:p-6">
               <nav className="flex flex-col gap-6 mt-4">
                 <Link href="#features" className="text-sm font-medium hover:text-blue-500 transition-colors">
                   Features

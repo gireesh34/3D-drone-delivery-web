@@ -136,11 +136,13 @@
 
 .container {
   max-width: 1400px;
+  width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 #hero {
   position: relative;
@@ -330,3 +332,4 @@ html {
 .slide-in {
   animation: slide-in 0.5s ease forwards;
 }
+
