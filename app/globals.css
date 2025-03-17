@@ -137,12 +137,13 @@
 .container {
   max-width: 1400px;
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: clip;
+  position: relative;
 }
 #hero {
   position: relative;
@@ -161,24 +162,7 @@
     padding-right: 6rem;
   }
 }
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-@keyframes slide-in {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Animation helpers */
-.fade-in {
-  animation: fade-in 0.5s ease forwards;
-}
-
-.slide-in {
-  animation: slide-in 0.5s ease forwards;
-}
 /* Section layouts with space for drone */
 .section-with-drone {
   display: grid;
@@ -332,4 +316,3 @@ html {
 .slide-in {
   animation: slide-in 0.5s ease forwards;
 }
-

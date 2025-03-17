@@ -22,7 +22,7 @@ export const DroneModel = ({ onLoad }: DroneModelProps) => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 480);
     };
 
     checkMobile();
@@ -104,13 +104,9 @@ export const DroneModel = ({ onLoad }: DroneModelProps) => {
         start: 'top top',
         end: 'bottom bottom',
         scrub: 1,
-        snap: {
-          snapTo: isMobile 
-            ? [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.85, 0.92, 1] 
-            : [0, 0.22, 0.45, 0.8, 0.9, 1],
-          duration: isMobile 
-            ? { min: 1.5, max: 4 }
-            : { min: 2, max: 5.5 },
+        snap: isMobile ? undefined : {
+          snapTo: [0, 0.22, 0.45, 0.8, 0.9, 1],
+          duration: { min: 2, max: 5.5 },
           ease: 'power2.inOut'
         },
         fastScrollEnd: false,
@@ -167,7 +163,7 @@ export const DroneModel = ({ onLoad }: DroneModelProps) => {
   }
 
   return (
-    <div className="spline-container fixed inset-0 pointer-events-none" ref={splineContainerRef} style={{
+    <div className="spline-container fixed inset-0 pointer-events-none overflow-hidden" ref={splineContainerRef} style={{
       width: isMobile ? '180vw' : '100%',
       height: isMobile ? '150vh' : '100%',
       left: isMobile ? '-45vw' : '0',
@@ -177,7 +173,8 @@ export const DroneModel = ({ onLoad }: DroneModelProps) => {
       <div ref={droneRef} className="drone-animate-float" style={{
         width: '100%',
         height: '100%',
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
       }}>
         <Spline
           scene="https://prod.spline.design/5LKo-cOR0VQDDpIu/scene.splinecode"
